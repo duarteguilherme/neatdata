@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+#
+# This script search a column, using its name
+#
+#
+
+filename=
+separator=,
+column=
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -f | --file )           shift
+                                filename=$1
+                                ;;
+        -s | --separator )      shift
+                                separator=$1
+                                ;;
+        -c | --column )         shift
+                                column=$1
+                                ;;
+    esac
+    shift
+done
+
+
+
+
+echo "The filename is: $filename"
+echo "The separator is: $separator"
+echo "The column is: $column"
+
+
+ 
