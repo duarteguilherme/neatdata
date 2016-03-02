@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+#
+# This script finds the separator of a data file
+#
+#
+
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -f | --file )           shift
+                                filename=$1
+                                ;;
+    esac
+    shift
+done
+
+
