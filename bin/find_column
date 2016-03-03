@@ -24,6 +24,19 @@ while [ "$1" != "" ]; do
     shift
 done
 
+if [ $filename == "" ]
+then
+    echo "ERROR: Write a filename"
+fi
+
+if [ $column == "" ]
+then
+    echo "ERROR: No column declared"
+fi
+
+
+
+
 
 
 
