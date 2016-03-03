@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #
-# This script search a column, using its name
+# This script is a collection of functions to deal with csv files
 #
 #
 
@@ -35,6 +35,9 @@ then
 fi
 
 
+grep -n 1 $filename | awk -F '$separator' '{for(i=1; i<=NF; i++)
+					{
+						if($i== 
 
 
 
