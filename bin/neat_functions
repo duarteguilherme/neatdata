@@ -5,47 +5,8 @@
 #
 #
 
-filename=
-separator=,
-column=
+find_column() {
+    head -1 $filename | awk -v col=$col -F "$separator" '{for(i=1; i<=NF; i++) {			if ( col == $i ) print i}	
+}'
+} 
 
-while [ "$1" != "" ]; do
-    case $1 in
-        -f | --file )           shift
-                                filename=$1
-                                ;;
-        -s | --separator )      shift
-                                separator=$1
-                                ;;
-        -c | --column )         shift
-                                column=$1
-                                ;;
-    esac
-    shift
-done
-
-if [ $filename == "" ]
-then
-    echo "ERROR: Write a filename"
-fi
-
-if [ $column == "" ]
-then
-    echo "ERROR: No column declared"
-fi
-
-
-grep -n 1 $filename | awk -F '$separator' '{for(i=1; i<=NF; i++)
-					{
-						if($i== 
-
-
-
-
-
-echo "The filename is: $filename"
-echo "The separator is: $separator"
-echo "The column is: $column"
-
-
- 
