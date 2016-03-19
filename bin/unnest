@@ -24,7 +24,7 @@ done
 
 if [ "$sep" == "" ] 
 then
-    separator=,	
+    separator="\"*,\"*"	
 fi
 
 if [ "$row_sep" == "" ]
@@ -46,6 +46,6 @@ fi
 ############################################################
 
 #
-awk -F, -v n_column=$(find_column) -v OFS=$separator -v rowsep=$row_sep '{n=split($n_column,a,rowsep);
+awk -F, -v n_column=$(find_column) -v OFS=, -v rowsep=$row_sep '{n=split($n_column,a,rowsep);
                      for(i=1;i<=n;i++) {$n_column=a[i]; print}}' $filename
 
