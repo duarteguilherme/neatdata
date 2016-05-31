@@ -15,16 +15,19 @@ source ./neat_functions
 
 
 ## Preparing arguments ######
-while [ "$1" != "" ]; do
+num=0
+while [ "$1" != "" ] && [ "$num" -lt 5 ]; do
     case $1 in
         -s | --separator )      shift
                                 sep=$1
+                                shift
                                 ;;
         -q | --quote )   shift
                                 quote=$1
+                                shift
                                 ;;
      esac
-    shift
+     num=$(( $num + 1 ))
 done
 
 filename=$1
@@ -39,7 +42,6 @@ then
     sep=\^$quote\|$quote,$quote\|$quote\$	
 fi
 
-echo $sep
 if [ "$filename" == "" ]
 then
     echo "ERROR - No filename"
@@ -47,5 +49,5 @@ then
 fi
 ############################################################
 
-echo $filename
+cat $filename
 
