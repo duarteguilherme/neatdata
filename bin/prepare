@@ -16,7 +16,7 @@ source ./neat_functions
 
 ## Preparing arguments ######
 num=0
-while [ "$1" != "" ] && [ "$num" -lt 5 ]; do
+while [[ "$1" != "" ]] && [[ "$num" -lt 5 ]]; do
     case $1 in
         -s | --separator )      shift
                                 sep=$1
@@ -32,17 +32,17 @@ done
 
 filename=$1
 
-if [ "$quote" == "" ] 
+if [[ "$quote" == "" ]] 
 then
     quote=\"
 fi
 
-if [ "$sep" == "" ] 
+if [[ "$sep" == "" ]] 
 then
     sep=\^$quote\|$quote,$quote\|$quote\$	
 fi
 
-if [ "$filename" == "" ]
+if [[ "$filename" == "" ]]
 then
     echo "ERROR - No filename"
     exit 1
