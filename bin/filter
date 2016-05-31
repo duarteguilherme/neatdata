@@ -15,15 +15,8 @@ source ./neat_functions
 
 
 ## Preparing arguments ######
-while [ "$1" != "" ]; do
-    case $1 in
-        -s | --separator )      shift
-                                sep=$1
-                                ;;
-        -q | --quote )   shift
-                                quote=$1
-                                ;;
-     esac
+while [ "$1" != "-"* ]; do
+    echo "$1"
     shift
 done
 
