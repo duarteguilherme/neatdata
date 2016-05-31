@@ -15,7 +15,7 @@ source ./neat_functions
 
 
 ## Preparing arguments ######
-while [ "$1" != "-"* ]; do
+while [[ "$1" == "-"* ]]; do
     echo "$1"
     shift
 done
