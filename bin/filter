@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# | ************************************************************************************* #
+# |
+# |  This application filters data based on some conditions
+# |
+# |  Try:  ( prepare -f datafile.csv | filter )
+# |
+# |  This application determines the structure of the data file, including separation and quotes
+# |
+# | ************************************************************************************* #
+
+
+source ./neat_functions
+
+
+## Preparing arguments ######
+while [ "$1" != "" ]; do
+    case $1 in
+        -s | --separator )      shift
+                                sep=$1
+                                ;;
+        -q | --quote )   shift
+                                quote=$1
+                                ;;
+     esac
+    shift
+done
+
